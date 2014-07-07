@@ -1,3 +1,5 @@
+var isPrime = require('./lib/isPrime');
+
 function getFactors( max ) {
   var i = ~~Math.sqrt( max ), factors = [];
   for ( ; i >= 2; --i ) {
@@ -6,16 +8,6 @@ function getFactors( max ) {
     }
   }
   return factors;
-}
-
-function isPrime( n ) {
-  var max = ~~Math.sqrt( n ), i = 2;
-  for ( ; i < max; ++i ) {
-    if ( n % i === 0 && i !== n  ) {
-      return false;
-    }
-  }
-  return true;
 }
 
 function largestPrimeFactor( n ) {

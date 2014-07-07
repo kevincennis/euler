@@ -1,6 +1,8 @@
+var isPrime = require('./lib/isPrime');
+
 function multiple( range ) {
-  var n = getHighestPrime( range ), i = 1, j;
-  for ( ; n; i++ ) {
+  var n = getHighestPrime( range ), i = 0, j;
+  while( ++i ) {
     for ( j = 2; j <= range; ++j ) {
       if ( ( n * i ) % j !== 0 ) {
         break;
@@ -19,16 +21,6 @@ function getHighestPrime( n ) {
     }
     n--;
   }
-}
-
-function isPrime( n ) {
-  var max = ~~Math.sqrt( n ), i = 2;
-  for ( ; i < max; ++i ) {
-    if ( n % i === 0 && i !== n  ) {
-      return false;
-    }
-  }
-  return true;
 }
 
 console.log( multiple( 20 ) );
